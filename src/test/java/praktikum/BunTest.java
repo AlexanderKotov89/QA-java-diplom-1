@@ -24,5 +24,4 @@ public class BunTest {
         float expected = 300;
         assertEquals(actual, expected, 0);
     }
-
 }
