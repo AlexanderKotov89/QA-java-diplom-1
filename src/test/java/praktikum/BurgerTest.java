@@ -6,7 +6,9 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
+
 import java.util.List;
+
 import static org.junit.Assert.*;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -20,6 +22,7 @@ public class BurgerTest {
     private Ingredient sauce;
     @Mock
     private Ingredient filling;
+
     @Before
     public void setUp() {
         burger = new Burger();
@@ -40,7 +43,7 @@ public class BurgerTest {
     }
 
     @Test
-    public void removeIngredient(){
+    public void removeIngredient() {
         burger.addIngredient(ingredient);
         burger.removeIngredient(0);
         List<Ingredient> actual = burger.ingredients;
@@ -49,10 +52,10 @@ public class BurgerTest {
     }
 
     @Test
-    public void moveIngredient(){
+    public void moveIngredient() {
         burger.addIngredient(filling);
         burger.addIngredient(sauce);
-        burger.moveIngredient(0,1);
+        burger.moveIngredient(0, 1);
         Ingredient actual = burger.ingredients.get(0);
 
         assertEquals("Перемещаем ингредиенты", sauce, actual);

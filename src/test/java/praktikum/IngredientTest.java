@@ -9,27 +9,32 @@ public class IngredientTest {
     private Ingredient ingredient;
 
     @Before
-    public void createNewBun(){
-       ingredient = new Ingredient(IngredientType.SAUCE, "chili sauce", 300);
+    public void createNewBun() {
+        ingredient = new Ingredient(IngredientType.SAUCE, "chili sauce", 300);
     }
 
     @Test
-    public void getTypeShowOk(){
+    public void getTypeShowOk() {
+        IngredientType expected = IngredientType.valueOf("SAUCE");
         IngredientType actual = ingredient.getType();
-        IngredientType expected = IngredientType.SAUCE;
+
         assertEquals(expected, actual);
     }
+
     @Test
-    public void getNameShowOk(){
-        String actual = ingredient.getName();
+    public void getNameShowOk() {
         String expected = "chili sauce";
-        assertEquals(actual, expected);
+        String actual = ingredient.getName();
+
+        assertEquals(expected, actual);
     }
+
     @Test
-    public void getPriceShowOk(){
-        float actual = ingredient.getPrice();
+    public void getPriceShowOk() {
         float expected = 300;
-        assertEquals(actual, expected, 0);
+        float actual = ingredient.getPrice();
+
+        assertEquals(expected, actual, 0);
     }
 }
 

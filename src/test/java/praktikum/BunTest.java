@@ -4,24 +4,26 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+
 public class BunTest {
     private Bun bun;
 
     @Before
-    public void createNewBun(){
+    public void createNewBun() {
         bun = new Bun("red bun", 300);
     }
 
     @Test
-    public void getNameBunShowsOk(){
-        String actual = bun.getName();
+    public void getNameBunShowsOk() {
         String expected = "red bun";
-        assertEquals(actual, expected);
+        String actual = bun.getName();
+        assertEquals(expected, actual);
     }
+
     @Test
-    public void getPriceBunShowsOk(){
-        float actual = bun.getPrice();
+    public void getPriceBunShowsOk() {
         float expected = 300;
-        assertEquals(actual, expected, 0);
+        float actual = bun.getPrice();
+        assertEquals(expected, actual, 0);
     }
 }
